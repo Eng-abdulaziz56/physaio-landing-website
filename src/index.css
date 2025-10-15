@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+body[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* RTL/LTR Spacing Utilities */
+.rtl\:space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+.ltr\:space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+}
+
+/* RTL/LTR Margin and Padding */
+.rtl\:ml-auto {
+  margin-left: auto;
+}
+
+.ltr\:ml-auto {
+  margin-left: auto;
+}
+
+.rtl\:mr-auto {
+  margin-right: auto;
+}
+
+.ltr\:mr-auto {
+  margin-right: auto;
+}
+
+/* RTL/LTR Text Alignment */
+.rtl\:text-right {
+  text-align: right;
+}
+
+.ltr\:text-left {
+  text-align: left;
+}
+
+/* RTL/LTR Flex Direction */
+.rtl\:flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.ltr\:flex-row {
+  flex-direction: row;
+}
+
+/* RTL/LTR Justify Content */
+.rtl\:justify-start {
+  justify-content: flex-start;
+}
+
+.ltr\:justify-start {
+  justify-content: flex-start;
+}
+
+.rtl\:justify-end {
+  justify-content: flex-end;
+}
+
+.ltr\:justify-end {
+  justify-content: flex-end;
+}
+
+/* Custom gradient animation for buttons */
+.bg-size-200 {
+  background-size: 200% 200%;
+}
+
+.bg-pos-0 {
+  background-position: 0% 50%;
+}
+
+/* Smooth language transition */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Arabic text spacing fixes */
+[dir="rtl"] {
+  word-spacing: 0.1em;
+  letter-spacing: 0.02em;
+}
+
+/* Ensure proper spacing in Arabic text */
+[dir="rtl"] button,
+[dir="rtl"] a,
+[dir="rtl"] span {
+  word-spacing: normal;
+}
+
+/* Fix for Arabic text in buttons */
+[dir="rtl"] button {
+  white-space: pre-wrap;
+  font-feature-settings: "liga" 0;
+}
+
+/* Specific fix for CTA buttons */
+[dir="rtl"] button.text-white,
+[dir="rtl"] button.bg-gradient-to-r {
+  word-spacing: 0.2em;
+  letter-spacing: 0.05em;
+}
